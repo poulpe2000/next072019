@@ -1,3 +1,8 @@
+<?php
+session_start();
+//print_r($_SESSION);
+require "../kernel/functions.php";
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -13,7 +18,8 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h1>Identifiez-vous !</h1>
-            <form action="" method="POST">
+            <?= getFlash()  ?>
+            <form action="../controllers/login.php" method="POST">
                 <div class="form-group">
                     <label for="login">Votre login</label>
                     <input class="form-control" type="text" name="login" id="login">
